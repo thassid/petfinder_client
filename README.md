@@ -5,9 +5,9 @@ This gem wraps the read-only, Petfinder.com API.
 
 ## Initiating Client
 
-require 'pet_finder'
+    `require 'pet_finder'`
 
-client = PetFinder::Client.new('MyApiKey')
+    `client = PetFinder::Client.new('MyApiKey')`
 
 ## Client Methods
 
@@ -20,9 +20,8 @@ client = PetFinder::Client.new('MyApiKey')
   * offset - integer
   * count - integer
     
-    shelters = client.find_shelters(92012)
-    
-    shelters = client.find_shelters('San Diego, CA', {:count => 10})
+            shelters = client.find_shelters(92012)
+            shelters = client.find_shelters('San Diego, CA', {:count => 10})
 
 Returns: 
 Array of Shelters    
@@ -32,8 +31,10 @@ Array of Shelters
 ### get\_shelter(shelter\_id, opts={})
 * shelter_id - string - shelter id
 
-    shelter = client.get_shelter('MyShelterId')
+
+        shelter = client.get_shelter('MyShelterId')
     
+
 Returns:
 Shelter Object
 
@@ -42,7 +43,7 @@ Shelter Object
 ### list_breeds(animal)
 * animal - string - type of animal (barnyard, bird, cat, dog, horse, pig, reptile, smallfurry)
 
-    dog\_breeds = client.list_breeds('dog')
+        dog_breeds = client.list_breeds('dog')
 
 Returns:
 Array of Strings
@@ -61,7 +62,7 @@ Array of Strings
   * count - integer - how many records to return for this particular API call (default is 25)
   * output - string - (default=basic)  How much of each record to return: basic (no description) or full (includes description)
 
-    pets = client.find_pets(92102, {:count => 50, :breed => 'Collie', :output => 'basic'})
+            pets = client.find_pets(92102, {:count => 50, :breed => 'Collie', :output => 'basic'})
 
 Returns:
 Array of Pets
@@ -75,7 +76,7 @@ Array of Pets
   * offset 
   * count 
   
-    shelters = client.list\_shelters\_with_breed('dog', 'collie')
+            shelters = client.list\_shelters\_with_breed('dog', 'collie')
     
 Return:
 Array of Shelters
@@ -85,11 +86,12 @@ Array of Shelters
 ### get_pet(pet_id)
 * pet_id - string
 
-    pet = client.get_pet('MyPetId')
+        pet = client.get_pet('MyPetId')
     
 Returns:
 Pet Object
 
+***
 
 ## Shelter Methods
 
@@ -117,11 +119,13 @@ Pet Object
   * offset - integer
   * output string  (default=basic)  How much of the pet record to return: id, basic (no description), full
   
-    pets = shelter.get_pets({:count => 25})
+            pets = shelter.get_pets({:count => 25})
 
 Returns:
 Array of Pets    
     
+***
+
 ## Pet Methods
 
 ### Attributes of Pet
@@ -143,14 +147,15 @@ Array of Pets
 
 ### get_photos
 
-    photos = pet.get_photos
+      photos = pet.get_photos
     
 Returns:
-{
-  "500x500"=>"url string", 
-  "max50\_height"=>"url string"
-  "300x250"=>"url string", 
-  "max60\_wide"=>"url string", 
-  "max95_wide"=>"url string"
-}  
+
+      {
+        "500x500"=>"url string", 
+        "max50\_height"=>"url string"
+        "300x250"=>"url string", 
+        "max60\_wide"=>"url string", 
+        "max95_wide"=>"url string"
+      }  
     
