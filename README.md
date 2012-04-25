@@ -5,9 +5,9 @@ This gem wraps the read-only, Petfinder.com API.
 
 ## Initiating Client
 
-    `require 'pet_finder'`
+    require 'pet_finder'
 
-    `client = PetFinder::Client.new('MyApiKey')`
+    client = PetFinder::Client.new('MyApiKey')
 
 ## Client Methods
 
@@ -76,7 +76,7 @@ Array of Pets
   * offset 
   * count 
   
-            shelters = client.list\_shelters\_with_breed('dog', 'collie')
+            shelters = client.list_shelters_with_breed('dog', 'collie')
     
 Return:
 Array of Shelters
