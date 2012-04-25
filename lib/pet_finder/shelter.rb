@@ -21,19 +21,10 @@ module PetFinder
         :id => id
       }.merge(opts)
       res = Client.get('/shelter.getPets', :query => query).parsed_response['petfinder']['pets']['pet']
+      res = [res] unless res.is_a?(Array)
       res.map{|p| Pet.new(p)} unless res.nil? || res.empty?
     end
     
-    ## ARGUMENTS:
-    # animal  string  required  type of animal (barnyard, bird, cat, dog, horse, pig, reptile, smallfurry)
-    # breed string  required  greed of animal(use pet.listBreeds for a list of valid breeds)
-    ## OPTIONS: 
-    # offset  integer optional  offset into the result set (default is 0)
-    # count integer optional  how many records to return for this particular API call (default is 25)
-    # format  string  optional (default=xml)  Response format: xml, json
-    ## return petfinderShelterRecordList
-    def list_by_breed
-    end
     
     
     

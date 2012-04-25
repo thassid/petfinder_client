@@ -8,27 +8,7 @@ module PetFinder
     include HTTParty
     base_uri 'http://api.petfinder.com/'
     format :xml
-    
-    # PF Key: afb752054145806e86da4d38721f2bb6
-    # PF Secret: 3700df7d3c49cc7d561e9bcb3e6b4cc0
-  
-    # Petfinder API Documentation
-    # http://www.petfinder.com/developers/api-docs
-  
-    ## Status Codes
-    # 100 PFAPI_OK  No error
-    # 200 PFAPI_ERR_INVALID Invalid request
-    # 201 PFAPI_ERR_NOENT Record does not exist
-    # 202 PFAPI_ERR_LIMIT A limit was exceeded
-    # 203 PFAPI_ERR_LOCATION  Invalid geographical location
-    # 300 PFAPI_ERR_UNAUTHORIZED  Request is unauthorized
-    # 301 PFAPI_ERR_AUTHFAIL  Authentication failure
-    # 999 PFAPI_ERR_INTERNAL  Generic internal error
-    
-    ## For Readme ?
-    # NOTE: Petfinder provides a secret for signing requests.  At the time of this writing, there are no API methods that require
-    # the secret (or auth token).  There are plans for future methods that will require the secret/auth token.
-  
+      
     def initialize(key)
       Client.default_params({:key => key})
     end
@@ -44,6 +24,7 @@ module PetFinder
         :location => location
       }.merge(opts)
       res = Client.get('/shelter.find', :query => query).parsed_response['petfinder']['shelters']['shelter']
+      res = [res] unless res.is_a?(Array)
       res.map{|atts| Shelter.new(atts)} unless res.nil? || res.empty?
     end
     
@@ -81,7 +62,24 @@ module PetFinder
         :location => location
       }.merge(opts)
       res = Client.get('/pet.find', :query => query).parsed_response['petfinder']['pets']['pet']
+      res = [res] unless res.is_a?(Array)
       res.map{|p| Pet.new(p)} unless res.nil? || res.empty?
+    end
+    
+    
+    
+    ## ARGUMENTS:
+    # animal  string  required  type of animal (barnyard, bird, cat, dog, horse, pig, reptile, smallfurry)
+    # breed string  required  greed of animal(use pet.listBreeds for a list of valid breeds)
+    ## OPTIONS: 
+    # offset  integer optional  offset into the result set (default is 0)
+    # count integer optional  how many records to return for this particular API call (default is 25)
+    def list_shelters_with_breed(animal, breed, opts={})
+      query = {
+        :animal => animal,
+        :breed => breed
+      }.merge(opts)
+      res = Client.get('/shelter.listByBreed', :query => query).parsed_response['petfinder']['shelters']['shelter']
     end
   
     
@@ -89,23 +87,24 @@ module PetFinder
       query = {
         :id => pet_id
       }.merge(opts)
-      res = Client.get('/pet.get', :query => query)['petfinder']['pet']
+      res = Client.get('/pet.get', :query => query).parsed_response['petfinder']['pet']
       Pet.new(res) unless res.nil?
     end
     
-        
-    ## OPTIONS:
-    # animal  string  optional  type of animal (barnyard, bird, cat, dog, horse, pig, reptile, smallfurry)
-    # breed string  optional  breed of animal (use breeds.list for a list of valid breeds)
-    # size  string  optional  size of animal (S=small, M=medium, L=large, XL=extra-large)
-    # sex character optional  M=male, F=female
-    # location  string  optional  the ZIP/postal code or city and state the animal should be located (NOTE: the closest possible animal will be selected)
-    # shelterid string  optional  ID of the shelter that posted the pet
-    # output  string  optional (default=id) How much of the pet record to return: id, basic, full
-    def get_random_pet(opts={})
-      res = Client.get('/pet.getRandom', :query => opts)
-      Pet.new(res) unless res.nil?
-    end
+    
+    ## NOTE: Not very useful ???    
+    # ## OPTIONS:
+    # # animal  string  optional  type of animal (barnyard, bird, cat, dog, horse, pig, reptile, smallfurry)
+    # # breed string  optional  breed of animal (use breeds.list for a list of valid breeds)
+    # # size  string  optional  size of animal (S=small, M=medium, L=large, XL=extra-large)
+    # # sex character optional  M=male, F=female
+    # # location  string  optional  the ZIP/postal code or city and state the animal should be located (NOTE: the closest possible animal will be selected)
+    # # shelterid string  optional  ID of the shelter that posted the pet
+    # # output  string  optional (default=id) How much of the pet record to return: id, basic, full
+    # def get_random_pet(opts={})
+    #   res = Client.get('/pet.getRandom', :query => opts)
+    #   Pet.new(res) unless res.nil?
+    # end
     
     
     
