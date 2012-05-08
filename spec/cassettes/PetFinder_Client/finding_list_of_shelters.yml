@@ -1,0 +1,75 @@
+--- 
+http_interactions: 
+- request: 
+    method: get
+    uri: http://api.petfinder.com/shelter.find?key=fake&limit=2&location=92102
+    body: 
+      encoding: US-ASCII
+      string: ""
+    headers: {}
+
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      Date: 
+      - Sun, 29 Apr 2012 21:46:10 GMT
+      Server: 
+      - Apache/2.2.11 (Unix) mod_apreq2-20051231/2.6.0 mod_perl/2.0.3 Perl/v5.8.8
+      Transfer-Encoding: 
+      - chunked
+      Content-Type: 
+      - text/xml; charset=iso-8859-1
+    body: 
+      encoding: US-ASCII
+      string: |
+        <?xml version="1.0" encoding="iso-8859-1"?>
+        
+        <petfinder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://api.petfinder.com/schemas/0.9/petfinder.xsd">
+         <header>
+          <version>0.1</version>
+          <timestamp>2012-04-29T21:46:11Z</timestamp>
+          <status>
+           <code>100</code>
+           <message />
+          </status>
+         </header>
+         <lastOffset>25</lastOffset>
+         <shelters>
+          <shelter>
+           <id>CA1080</id>
+           <name>Baja Animal Sanctuary</name>
+           <address1>www.BajaAnimalSanctuary.org</address1>
+           <address2 />
+           <city>San Diego</city>
+           <state>CA</state>
+           <zip>92102</zip>
+           <country>US</country>
+           <latitude>32.714800</latitude>
+           <longitude>-117.118200</longitude>
+           <phone>619-786-7928</phone>
+           <fax />
+           <email>bajadogs@aol.com</email>
+          </shelter>
+          <shelter>
+           <id>CA1482</id>
+           <name>Second Chance Dog Rescue</name>
+           <address1>2435 C Street</address1>
+           <address2>Suite 2</address2>
+           <city>San Diego</city>
+           <state>CA</state>
+           <zip>92102</zip>
+           <country>US</country>
+           <latitude>32.714800</latitude>
+           <longitude>-117.118200</longitude>
+           <phone>619-721-3647</phone>
+           <fax />
+           <email>info@secondchancedogrescue.org</email>
+          </shelter>
+         </shelters>
+        </petfinder>
+
+    http_version: 
+  recorded_at: Sun, 29 Apr 2012 21:46:12 GMT
+recorded_with: VCR 2.1.1

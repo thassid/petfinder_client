@@ -8,7 +8,8 @@ module PetFinder
     include HTTParty
     base_uri 'http://api.petfinder.com/'
     format :xml
-      
+    
+    # TODO: make this a singleton class
     def initialize(key)
       Client.default_params({:key => key})
     end
@@ -67,20 +68,20 @@ module PetFinder
     end
     
     
-    
-    ## ARGUMENTS:
-    # animal  string  required  type of animal (barnyard, bird, cat, dog, horse, pig, reptile, smallfurry)
-    # breed string  required  greed of animal(use pet.listBreeds for a list of valid breeds)
-    ## OPTIONS: 
-    # offset  integer optional  offset into the result set (default is 0)
-    # count integer optional  how many records to return for this particular API call (default is 25)
-    def list_shelters_with_breed(animal, breed, opts={})
-      query = {
-        :animal => animal,
-        :breed => breed
-      }.merge(opts)
-      res = Client.get('/shelter.listByBreed', :query => query).parsed_response['petfinder']['shelters']['shelter']
-    end
+    ## NOTE:  Recieving 500 error from PF API.  Not a very useful request anyways.
+    # ## ARGUMENTS:
+    # # animal  string  required  type of animal (barnyard, bird, cat, dog, horse, pig, reptile, smallfurry)
+    # # breed string  required  greed of animal(use pet.listBreeds for a list of valid breeds)
+    # ## OPTIONS: 
+    # # offset  integer optional  offset into the result set (default is 0)
+    # # count integer optional  how many records to return for this particular API call (default is 25)
+    # def list_shelters_with_breed(animal, breed, opts={})
+    #   query = {
+    #     :animal => animal,
+    #     :breed => breed
+    #   }.merge(opts)
+    #   res = Client.get('/shelter.listByBreed', :query => query).parsed_response['petfinder']['shelters']['shelter']
+    # end
   
     
     def get_pet(pet_id, opts={})

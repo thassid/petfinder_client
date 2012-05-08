@@ -1,0 +1,157 @@
+--- 
+http_interactions: 
+- request: 
+    method: get
+    uri: http://api.petfinder.com/pet.find?animal=dog&count=2&key=fake&location=San%20Diego,%20CA
+    body: 
+      encoding: US-ASCII
+      string: ""
+    headers: {}
+
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      Date: 
+      - Sun, 06 May 2012 20:34:19 GMT
+      Server: 
+      - Apache/2.2.11 (Unix) mod_apreq2-20051231/2.6.0 mod_perl/2.0.3 Perl/v5.8.8
+      Transfer-Encoding: 
+      - chunked
+      Content-Type: 
+      - text/xml; charset=iso-8859-1
+    body: 
+      encoding: US-ASCII
+      string: |
+        <?xml version="1.0" encoding="iso-8859-1"?>
+        
+        <petfinder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://api.petfinder.com/schemas/0.9/petfinder.xsd">
+         <header>
+          <version>0.1</version>
+          <timestamp>2012-05-06T20:34:20Z</timestamp>
+          <status>
+           <code>100</code>
+           <message />
+          </status>
+         </header>
+         <lastOffset>2</lastOffset>
+         <pets>
+          <pet>
+           <id>19901761</id>
+           <shelterId>CA1827</shelterId>
+           <shelterPetId>Sasha</shelterPetId>
+           <name>Sasha</name>
+           <animal>Dog</animal>
+           <breeds>
+            <breed>Doberman Pinscher</breed>
+           </breeds>
+           <mix>no</mix>
+           <age>Adult</age>
+           <sex>F</sex>
+           <size>L</size>
+           <options>
+            <option>altered</option>
+            <option>hasShots</option>
+            <option>housebroken</option>
+            <option>noCats</option>
+            <option>noDogs</option>
+            <option>noKids</option>
+           </options>
+           <description><![CDATA[<div>Sasha is 7 years old approx. She is great with the right people but not so much with other dogs. She is also over weight right now, but we do have her on a diet and exercise regiment. </div>
+        <br/><a href="http://www.petfinder.com/petdetail/19901761">View this pet on Petfinder.com</a>
+        ]]></description>
+           <lastUpdate>2011-09-02T20:32:32Z</lastUpdate>
+           <status>A</status>
+           <media>
+            <photos>
+             <photo id="1" size="x">http://photos.petfinder.com/photos/US/CA/CA1827/19901761/CA1827.19901761-1-x.jpg</photo>
+             <photo id="1" size="fpm">http://photos.petfinder.com/photos/US/CA/CA1827/19901761/CA1827.19901761-1-fpm.jpg</photo>
+             <photo id="1" size="pn">http://photos.petfinder.com/photos/US/CA/CA1827/19901761/CA1827.19901761-1-pn.jpg</photo>
+             <photo id="1" size="pnt">http://photos.petfinder.com/photos/US/CA/CA1827/19901761/CA1827.19901761-1-pnt.jpg</photo>
+             <photo id="1" size="t">http://photos.petfinder.com/photos/US/CA/CA1827/19901761/CA1827.19901761-1-t.jpg</photo>
+             <photo id="2" size="x">http://photos.petfinder.com/photos/US/CA/CA1827/19901761/CA1827.19901761-2-x.jpg</photo>
+             <photo id="2" size="fpm">http://photos.petfinder.com/photos/US/CA/CA1827/19901761/CA1827.19901761-2-fpm.jpg</photo>
+             <photo id="2" size="pn">http://photos.petfinder.com/photos/US/CA/CA1827/19901761/CA1827.19901761-2-pn.jpg</photo>
+             <photo id="2" size="pnt">http://photos.petfinder.com/photos/US/CA/CA1827/19901761/CA1827.19901761-2-pnt.jpg</photo>
+             <photo id="2" size="t">http://photos.petfinder.com/photos/US/CA/CA1827/19901761/CA1827.19901761-2-t.jpg</photo>
+             <photo id="3" size="x">http://photos.petfinder.com/photos/US/CA/CA1827/19901761/CA1827.19901761-3-x.jpg</photo>
+             <photo id="3" size="fpm">http://photos.petfinder.com/photos/US/CA/CA1827/19901761/CA1827.19901761-3-fpm.jpg</photo>
+             <photo id="3" size="pn">http://photos.petfinder.com/photos/US/CA/CA1827/19901761/CA1827.19901761-3-pn.jpg</photo>
+             <photo id="3" size="pnt">http://photos.petfinder.com/photos/US/CA/CA1827/19901761/CA1827.19901761-3-pnt.jpg</photo>
+             <photo id="3" size="t">http://photos.petfinder.com/photos/US/CA/CA1827/19901761/CA1827.19901761-3-t.jpg</photo>
+            </photos>
+           </media>
+           <contact>
+            <address1>c/o Scholefield, P.C.</address1>
+            <address2>501 W. Broadway #1770</address2>
+            <city>San Diego</city>
+            <state>CA</state>
+            <zip>92101</zip>
+            <phone>619-544-0086</phone>
+            <fax>619-544-00445</fax>
+            <email>web@aztecdpc.com</email>
+           </contact>
+          </pet>
+          <pet>
+           <id>20775306</id>
+           <shelterId>CA1827</shelterId>
+           <shelterPetId />
+           <name>Chance</name>
+           <animal>Dog</animal>
+           <breeds>
+            <breed>Doberman Pinscher</breed>
+           </breeds>
+           <mix>no</mix>
+           <age>Adult</age>
+           <sex>M</sex>
+           <size>L</size>
+           <options>
+            <option>altered</option>
+            <option>hasShots</option>
+            <option>noCats</option>
+            <option>noDogs</option>
+            <option>noKids</option>
+            <option>specialNeeds</option>
+           </options>
+           <description><![CDATA[<div>Chance is around 2 1/2 years old, he came to our rescue from a shelter in the L.A area. He is crate trained. He is unsure of new people but once he gets to know you, you are his friend for life. He needs a home where the owner will let Chance get to know you on his terms. He is also unsure around other dogs, but we believe that can be fixed with training. He hypo-thyroid but that is kept in balance with a simple daily medication. </div>
+        <br/><a href="http://www.petfinder.com/petdetail/20775306">View this pet on Petfinder.com</a>
+        ]]></description>
+           <lastUpdate>2011-09-02T20:54:37Z</lastUpdate>
+           <status>A</status>
+           <media>
+            <photos>
+             <photo id="1" size="x">http://photos.petfinder.com/photos/US/CA/CA1827/20775306/CA1827.20775306-1-x.jpg</photo>
+             <photo id="1" size="fpm">http://photos.petfinder.com/photos/US/CA/CA1827/20775306/CA1827.20775306-1-fpm.jpg</photo>
+             <photo id="1" size="pn">http://photos.petfinder.com/photos/US/CA/CA1827/20775306/CA1827.20775306-1-pn.jpg</photo>
+             <photo id="1" size="pnt">http://photos.petfinder.com/photos/US/CA/CA1827/20775306/CA1827.20775306-1-pnt.jpg</photo>
+             <photo id="1" size="t">http://photos.petfinder.com/photos/US/CA/CA1827/20775306/CA1827.20775306-1-t.jpg</photo>
+             <photo id="2" size="x">http://photos.petfinder.com/photos/US/CA/CA1827/20775306/CA1827.20775306-2-x.jpg</photo>
+             <photo id="2" size="fpm">http://photos.petfinder.com/photos/US/CA/CA1827/20775306/CA1827.20775306-2-fpm.jpg</photo>
+             <photo id="2" size="pn">http://photos.petfinder.com/photos/US/CA/CA1827/20775306/CA1827.20775306-2-pn.jpg</photo>
+             <photo id="2" size="pnt">http://photos.petfinder.com/photos/US/CA/CA1827/20775306/CA1827.20775306-2-pnt.jpg</photo>
+             <photo id="2" size="t">http://photos.petfinder.com/photos/US/CA/CA1827/20775306/CA1827.20775306-2-t.jpg</photo>
+             <photo id="3" size="x">http://photos.petfinder.com/photos/US/CA/CA1827/20775306/CA1827.20775306-3-x.jpg</photo>
+             <photo id="3" size="fpm">http://photos.petfinder.com/photos/US/CA/CA1827/20775306/CA1827.20775306-3-fpm.jpg</photo>
+             <photo id="3" size="pn">http://photos.petfinder.com/photos/US/CA/CA1827/20775306/CA1827.20775306-3-pn.jpg</photo>
+             <photo id="3" size="pnt">http://photos.petfinder.com/photos/US/CA/CA1827/20775306/CA1827.20775306-3-pnt.jpg</photo>
+             <photo id="3" size="t">http://photos.petfinder.com/photos/US/CA/CA1827/20775306/CA1827.20775306-3-t.jpg</photo>
+            </photos>
+           </media>
+           <contact>
+            <address1>c/o Scholefield, P.C.</address1>
+            <address2>501 W. Broadway #1770</address2>
+            <city>San Diego</city>
+            <state>CA</state>
+            <zip>92101</zip>
+            <phone>619-544-0086</phone>
+            <fax>619-544-00445</fax>
+            <email>web@aztecdpc.com</email>
+           </contact>
+          </pet>
+         </pets>
+        </petfinder>
+
+    http_version: 
+  recorded_at: Sun, 06 May 2012 20:34:20 GMT
+recorded_with: VCR 2.1.1

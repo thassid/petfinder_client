@@ -69,7 +69,7 @@ Array of Pets
 
 ***
 
-### list\_shelters\_with\_breed(animal, breed, opts={})
+<!-- ### list\_shelters\_with\_breed(animal, breed, opts={})
 * animal - string - type of animal (barnyard, bird, cat, dog, horse, pig, reptile, smallfurry)
 * breed - string - breed of animal(use pet.listBreeds for a list of valid breeds)
 * Options:
@@ -81,7 +81,7 @@ Array of Pets
 Return:
 Array of Shelters
 
-***
+*** -->
 
 ### get_pet(pet_id)
 * pet_id - string
@@ -139,7 +139,7 @@ Array of Pets
 * size
 * sex
 * description
-* lastUpdate
+* last_update
 * status
 * contact
 
@@ -153,9 +153,9 @@ Returns:
 
       {
         "500x500"=>"url string", 
-        "max50\_height"=>"url string"
+        "max50_height"=>"url string"
         "300x250"=>"url string", 
-        "max60\_wide"=>"url string", 
+        "max60_wide"=>"url string", 
         "max95_wide"=>"url string"
       }  
     

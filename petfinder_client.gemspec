@@ -14,4 +14,6 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.3.4"
   
   s.add_dependency("httparty", ["~> 0.8.1"])
+  s.add_dependency("vcr", ["~> 2.1.1"])
+  s.add_dependency("activesupport", ["~> 3.2"])
 end
