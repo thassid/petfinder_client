@@ -3,6 +3,12 @@ This gem wraps the read-only, Petfinder.com API.
 
 [http://www.petfinder.com/developers/api-docs](http://www.petfinder.com/developers/api-docs)
 
+## Install Gem
+
+    require 'rubygems'
+    require 'pet_finder'
+
+
 ## Initiating Client
 
     require 'pet_finder'
@@ -152,10 +158,26 @@ Array of Pets
 Returns:
 
       {
-        "500x500"=>"url string", 
-        "max50_height"=>"url string"
-        "300x250"=>"url string", 
-        "max60_wide"=>"url string", 
-        "max95_wide"=>"url string"
-      }  
+        "photo_1"=>{
+          "500x500"=>"http://photos.petfinder.com/photos/US/MD/MD250/17549971/MD250.17549971-1-x.jpg",   
+          "max50_height"=>"http://photos.petfinder.com/photos/US/MD/MD250/17549971/MD250.17549971-1-t.jpg", 
+          "300x250"=>"http://photos.petfinder.com/photos/US/MD/MD250/17549971/MD250.17549971-1-pn.jpg", 
+          "max60_wide"=>"http://photos.petfinder.com/photos/US/MD/MD250/17549971/MD250.17549971-1-pnt.jpg", 
+          "max95_wide"=>"http://photos.petfinder.com/photos/US/MD/MD250/17549971/MD250.17549971-1-fpm.jpg"
+        }, 
+        "photo_2"=>{
+          "500x500"=>"http://photos.petfinder.com/photos/US/MD/MD250/17549971/MD250.17549971-2-x.jpg", 
+          "max50_height"=>"http://photos.petfinder.com/photos/US/MD/MD250/17549971/MD250.17549971-2-t.jpg", 
+          "300x250"=>"http://photos.petfinder.com/photos/US/MD/MD250/17549971/MD250.17549971-2-pn.jpg", 
+          "max60_wide"=>"http://photos.petfinder.com/photos/US/MD/MD250/17549971/MD250.17549971-2-pnt.jpg", 
+          "max95_wide"=>"http://photos.petfinder.com/photos/US/MD/MD250/17549971/MD250.17549971-2-fpm.jpg"
+        }, 
+        "photo_3"=>{
+          "500x500"=>"http://photos.petfinder.com/photos/US/MD/MD250/17549971/MD250.17549971-3-x.jpg", 
+          "max50_height"=>"http://photos.petfinder.com/photos/US/MD/MD250/17549971/MD250.17549971-3-t.jpg", 
+          "300x250"=>"http://photos.petfinder.com/photos/US/MD/MD250/17549971/MD250.17549971-3-pn.jpg", 
+          "max60_wide"=>"http://photos.petfinder.com/photos/US/MD/MD250/17549971/MD250.17549971-3-pnt.jpg", 
+          "max95_wide"=>"http://photos.petfinder.com/photos/US/MD/MD250/17549971/MD250.17549971-3-fpm.jpg"
+        }
+      }   
     
