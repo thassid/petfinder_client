@@ -5,8 +5,7 @@ This gem wraps the read-only, Petfinder.com API.
 
 ## Install Gem
 
-    require 'rubygems'
-    require 'pet_finder'
+    gem install pet_finder
 
 
 ## Initiating Client
